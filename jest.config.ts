@@ -17,7 +17,6 @@ const config: Config = {
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   testEnvironment: "jsdom",
-  testMatch: ["**/*.test.tsx"],
 };
 
 export default createjestConfig(config);
