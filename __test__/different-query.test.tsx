@@ -5,6 +5,7 @@ import { ColorList, LodableColorList } from "../src/app/different-queries/page";
 describe("different query test suites", () => {
   it("getByRole, queryByRole , findByRole", async () => {
     render(<ColorList />);
+
     // ul role -> list
 
     // getByRole -> 있는 요소를 찾을때
@@ -64,8 +65,10 @@ describe("different query test suites", () => {
 
 describe("loadable color list test suites", () => {
   it("화면에 렌더링", async () => {
+    // 데이터페칭을 해서 상태에 데이터를 저장하고 UI를 렌더링
     render(<LodableColorList />);
 
+    // screen useEffect을 기다림 콜백 함수에서는 동기적으로 요소찾기 가능
     await waitFor(() => {
       const listItem = screen.getAllByRole("listitem");
       expect(listItem).toHaveLength(3);
